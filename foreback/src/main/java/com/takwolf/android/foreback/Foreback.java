@@ -31,14 +31,14 @@ public final class Foreback implements Application.ActivityLifecycleCallbacks {
         }
     }
 
-    public static void registerListener(Foreback.Listener listener) {
+    public static void registerListener(Listener listener) {
         checkInit();
         synchronized (singleton.listenerList) {
             singleton.listenerList.add(listener);
         }
     }
 
-    public static void unregisterListener(Foreback.Listener listener) {
+    public static void unregisterListener(Listener listener) {
         checkInit();
         synchronized (singleton.listenerList) {
             singleton.listenerList.remove(listener);
@@ -54,7 +54,7 @@ public final class Foreback implements Application.ActivityLifecycleCallbacks {
         return !isApplicationInTheForeground();
     }
 
-    private final List<Foreback.Listener> listenerList = new ArrayList<>();
+    private final List<Listener> listenerList = new ArrayList<>();
 
     private int foregroundCount = 0;
     private int bufferCount = 0;
