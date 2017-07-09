@@ -72,8 +72,7 @@ public final class Foreback implements Application.ActivityLifecycleCallbacks {
     private void dispatchApplicationEnterForeground(Activity activity) {
         Object[] listeners = collectListeners();
         if (listeners != null) {
-            for (int i = 0; i < listeners.length; i++) {
-                Object listener = listeners[i];
+            for (Object listener : listeners) {
                 if (listener instanceof Listener) {
                     ((Listener) listener).onApplicationEnterForeground(activity);
                 }
@@ -84,8 +83,7 @@ public final class Foreback implements Application.ActivityLifecycleCallbacks {
     private void dispatchApplicationEnterBackground(Activity activity) {
         Object[] listeners = collectListeners();
         if (listeners != null) {
-            for (int i = 0; i < listeners.length; i++) {
-                Object listener = listeners[i];
+            for (Object listener : listeners) {
                 if (listener instanceof Listener) {
                     ((Listener) listener).onApplicationEnterBackground(activity);
                 }
