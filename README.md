@@ -10,6 +10,8 @@ A utility to help listen Android application enter foreground or background.
 
 一个用于帮助监听 Android 应用进入前台或者进入后台的工具。
 
+有一个功能上类似，但是细节上存在差别的项目：[https://github.com/TakWolf/Android-Repause](https://github.com/TakWolf/Android-Repause)
+
 ## Usage ##
 
 ### Gradle ###
