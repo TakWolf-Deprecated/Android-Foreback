@@ -118,24 +118,19 @@ public final class Foreback implements Application.ActivityLifecycleCallbacks {
     }
 
     @Override
-    public void onActivityCreated(Activity activity, Bundle savedInstanceState) {
-    }
+    public void onActivityCreated(Activity activity, Bundle savedInstanceState) {}
 
     @Override
-    public void onActivityDestroyed(Activity activity) {
-    }
+    public void onActivityDestroyed(Activity activity) {}
 
     @Override
-    public void onActivityResumed(Activity activity) {
-    }
+    public void onActivityResumed(Activity activity) {}
 
     @Override
-    public void onActivityPaused(Activity activity) {
-    }
+    public void onActivityPaused(Activity activity) {}
 
     @Override
-    public void onActivitySaveInstanceState(Activity activity, Bundle outState) {
-    }
+    public void onActivitySaveInstanceState(Activity activity, Bundle outState) {}
 
     public interface Listener {
 
