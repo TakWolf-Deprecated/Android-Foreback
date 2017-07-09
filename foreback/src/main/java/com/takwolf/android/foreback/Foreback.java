@@ -10,7 +10,7 @@ import java.util.List;
 
 public final class Foreback implements Application.ActivityLifecycleCallbacks {
 
-    private static final String TAG = Foreback.class.getSimpleName();
+    private static final String TAG = "Foreback";
 
     private Foreback() {}
 
