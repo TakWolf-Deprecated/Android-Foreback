@@ -59,33 +59,35 @@ public final class Foreback implements Application.ActivityLifecycleCallbacks {
     private int foregroundCount = 0;
     private int bufferCount = 0;
 
-    private Object[] collectListeners() {
-        Object[] listeners = null;
+    private Listener[] collectListeners() {
         synchronized (listenerList) {
             if (listenerList.size() > 0) {
-                listeners = listenerList.toArray();
+                Listener[] listeners = new Listener[listenerList.size()];
+                listenerList.toArray(listeners);
+                return listeners;
+            } else {
+                return null;
             }
         }
-        return listeners;
     }
 
     private void dispatchApplicationEnterForeground(Activity activity) {
-        Object[] listeners = collectListeners();
+        Listener[] listeners = collectListeners();
         if (listeners != null) {
-            for (Object listener : listeners) {
-                if (listener instanceof Listener) {
-                    ((Listener) listener).onApplicationEnterForeground(activity);
+            for (Listener listener : listeners) {
+                if (listener != null) {
+                    listener.onApplicationEnterForeground(activity);
                 }
             }
         }
     }
 
     private void dispatchApplicationEnterBackground(Activity activity) {
-        Object[] listeners = collectListeners();
+        Listener[] listeners = collectListeners();
         if (listeners != null) {
-            for (Object listener : listeners) {
-                if (listener instanceof Listener) {
-                    ((Listener) listener).onApplicationEnterBackground(activity);
+            for (Listener listener : listeners) {
+                if (listener != null) {
+                    listener.onApplicationEnterBackground(activity);
                 }
             }
         }
