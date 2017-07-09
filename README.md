@@ -10,6 +10,39 @@ A utility to help listen Android application enter foreground or background.
 
 一个用于帮助监听 Android 应用进入前台或者进入后台的工具。
 
+## Usage ##
+
+### Gradle ###
+
+``` gradle
+compile 'com.takwolf.android:foreback:0.0.1'
+```
+
+### Java ###
+
+``` java
+public class AppController extends Application implements Foreback.Listener {
+
+    @Override
+    public void onCreate() {
+        super.onCreate();
+        Foreback.init(this);
+        Foreback.registerListener(this);
+    }
+
+    @Override
+    public void onApplicationEnterForeground(Activity activity) {
+        // TODO
+    }
+
+    @Override
+    public void onApplicationEnterBackground(Activity activity) {
+        // TODO
+    }
+
+}
+```
+
 ## Author ##
 
 TakWolf
