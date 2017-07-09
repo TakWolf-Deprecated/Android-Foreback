@@ -20,6 +20,8 @@ compile 'com.takwolf.android:foreback:0.0.1'
 
 ### Java ###
 
+Initialize in `Application.onCreate()`, and register a listener:
+
 ``` java
 public class AppController extends Application implements Foreback.Listener {
 
@@ -41,6 +43,15 @@ public class AppController extends Application implements Foreback.Listener {
     }
 
 }
+```
+
+Notice, if register listener in `Activity`, don't forget to unregister to avoid memory leaks.
+
+Also library provides the following api:
+
+``` java
+Foreback.isApplicationInTheForeground();
+Foreback.isApplicationInTheBackground();
 ```
 
 ## Author ##
