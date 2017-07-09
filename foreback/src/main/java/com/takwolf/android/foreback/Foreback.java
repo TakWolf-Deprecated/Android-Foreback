@@ -45,13 +45,13 @@ public final class Foreback implements Application.ActivityLifecycleCallbacks {
         }
     }
 
-    public static boolean isApplicationEnterForeground() {
+    public static boolean isApplicationInTheForeground() {
         checkInit();
         return singleton.foregroundCount > 0;
     }
 
-    public static boolean isApplicationEnterBackground() {
-        return !isApplicationEnterForeground();
+    public static boolean isApplicationInTheBackground() {
+        return !isApplicationInTheForeground();
     }
 
     private final List<Foreback.Listener> listenerList = new ArrayList<>();
