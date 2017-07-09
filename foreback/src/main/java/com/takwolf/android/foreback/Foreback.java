@@ -33,12 +33,16 @@ public final class Foreback implements Application.ActivityLifecycleCallbacks {
 
     public static void registerListener(Foreback.Listener listener) {
         checkInit();
-        singleton.listenerList.add(listener);
+        synchronized (singleton.listenerList) {
+            singleton.listenerList.add(listener);
+        }
     }
 
     public static void unregisterListener(Foreback.Listener listener) {
         checkInit();
-        singleton.listenerList.remove(listener);
+        synchronized (singleton.listenerList) {
+            singleton.listenerList.remove(listener);
+        }
     }
 
     public static boolean isApplicationEnterForeground() {
@@ -55,15 +59,37 @@ public final class Foreback implements Application.ActivityLifecycleCallbacks {
     private int foregroundCount = 0;
     private int bufferCount = 0;
 
+    private Object[] collectListeners() {
+        Object[] listeners = null;
+        synchronized (listenerList) {
+            if (listenerList.size() > 0) {
+                listeners = listenerList.toArray();
+            }
+        }
+        return listeners;
+    }
+
     private void dispatchApplicationEnterForeground(Activity activity) {
-        for (Foreback.Listener listener : listenerList) {
-            listener.onApplicationEnterForeground(activity);
+        Object[] listeners = collectListeners();
+        if (listeners != null) {
+            for (int i = 0; i < listeners.length; i++) {
+                Object listener = listeners[i];
+                if (listener instanceof Listener) {
+                    ((Listener) listener).onApplicationEnterForeground(activity);
+                }
+            }
         }
     }
 
     private void dispatchApplicationEnterBackground(Activity activity) {
-        for (Foreback.Listener listener : listenerList) {
-            listener.onApplicationEnterBackground(activity);
+        Object[] listeners = collectListeners();
+        if (listeners != null) {
+            for (int i = 0; i < listeners.length; i++) {
+                Object listener = listeners[i];
+                if (listener instanceof Listener) {
+                    ((Listener) listener).onApplicationEnterBackground(activity);
+                }
+            }
         }
     }
 
