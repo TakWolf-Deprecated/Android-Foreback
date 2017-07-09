@@ -7,7 +7,7 @@ android {
 
     defaultConfig {
         applicationId "com.takwolf.android.forebackdemo"
-        minSdkVersion 9
+        minSdkVersion 14
         targetSdkVersion 25
         versionCode Integer.parseInt(new Date().format('yyyyMMdd'))
         versionName '0.0.1'
