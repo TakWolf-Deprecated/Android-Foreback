@@ -1,8 +1,10 @@
 package com.takwolf.android.forebackdemo;
 
+import android.Manifest;
 import android.content.Intent;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 
@@ -34,6 +36,11 @@ public class MainActivity extends AppCompatActivity {
     @OnClick(R.id.btn_open_camera)
     void onBtnOpenCameraClick() {
         startActivity(new Intent(MediaStore.ACTION_IMAGE_CAPTURE));
+    }
+
+    @OnClick(R.id.btn_request_permission)
+    void onBtnRequestPermissionClick() {
+        ActivityCompat.requestPermissions(this, new String[] {Manifest.permission.CAMERA}, 0);
     }
 
 }

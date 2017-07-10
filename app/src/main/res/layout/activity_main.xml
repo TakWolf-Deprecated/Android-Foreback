@@ -48,6 +48,14 @@
                 android:text="Open Camera"
                 android:textAllCaps="false" />
 
+            <Button
+                android:id="@+id/btn_request_permission"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:text="Request Permission"
+                android:textAllCaps="false" />
+
         </LinearLayout>
 
     </ScrollView>

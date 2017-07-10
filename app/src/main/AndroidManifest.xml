@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.takwolf.android.forebackdemo">
 
+    <uses-permission android:name="android.permission.CAMERA" />
+
     <application
         android:name=".AppController"
         android:icon="@mipmap/ic_launcher"
