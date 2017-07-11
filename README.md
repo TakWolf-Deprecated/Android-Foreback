@@ -10,7 +10,41 @@ A utility to help listen Android application enter foreground or background.
 
 一个用于帮助监听 Android 应用进入前台或者进入后台的工具。
 
-有一个功能上类似，但是细节上存在差别的项目：[https://github.com/TakWolf/Android-Repause](https://github.com/TakWolf/Android-Repause)
+This library implements the listening of the application's foreground and background switches by manipulating the counter in the `Activity.onStart ()` and `Activity.onStop ()` callbacks.
+
+Application in the foreground means that there is at least one visible `Activity`.
+
+This is a reliable implementation, and the behavior is similar to iOS's `UIApplicationDelegate`.
+
+Therefore, the following situation will not be considered as the application into the background:
+
+- Received a call and answered
+
+- Request permissions and show the system confirm dialog
+
+这个库通过在 `Activity.onStart()` 和 `Activity.onStop()` 回调中操作计数器的方式，来实现对应用前后台切换的监听。
+
+应用在前台，意味着该应用至少存在一个可见的 `Activity`。
+
+这是一个可靠的实现，他的行为跟 iOS 的 `UIApplicationDelegate` 类似。
+
+因此，下面的情况将不会被视为应用进入后台：
+
+- 接收到一个电话并接听
+
+- 申请权限并弹出系统确认对话框
+
+Application enter foreground or background, is different form application resumed or paused in concept.
+
+There is another library named [Android-Repause](https://github.com/TakWolf/Android-Repause), can listen application level resumed or paused.
+
+If this library is not for you, try another library.
+
+应用前台后台切换和应用暂停恢复，概念上是不同的。
+
+这有另外一个库叫做 [Android-Repause](https://github.com/TakWolf/Android-Repause)，用于监听应用级别恢复或者暂。
+
+如果本库不适合你，请尝试另外一个库。
 
 ## Usage ##
 
@@ -23,6 +57,8 @@ compile 'com.takwolf.android:foreback:0.0.1'
 ### Java ###
 
 Initialize in `Application.onCreate()`, and register a listener:
+
+请在 `Application.onCreate()` 中初始化，并注册一个监听器：
 
 ``` java
 public class AppController extends Application implements Foreback.Listener {
@@ -49,7 +85,11 @@ public class AppController extends Application implements Foreback.Listener {
 
 Notice, if register listener in `Activity`, don't forget to unregister to avoid memory leaks.
 
+注意，如果你在 `Activity` 中注册监听器，请不要忘记反注册以避免内存泄露。
+
 Also library provides the following api:
+
+该库也提供下面的 API：
 
 ``` java
 Foreback.isApplicationInTheForeground();
