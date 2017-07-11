@@ -26,7 +26,7 @@ Therefore, the following situation will not be considered as the application int
 
 这个库通过在 `Activity.onStart()` 和 `Activity.onStop()` 回调中操作计数器的方式，来实现对应用前后台切换的监听。
 
-这是一个可靠的实现，他的行为跟 iOS 的 `UIApplicationDelegate` 类似。
+这是一个可靠的实现，行为跟 iOS 的 `UIApplicationDelegate` 类似。
 
 因此，下面的情况将不会被视为应用进入后台：
 
