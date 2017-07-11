@@ -10,9 +10,9 @@ A utility to help listen Android application enter foreground or background.
 
 一个用于帮助监听 Android 应用进入前台或者进入后台的工具。
 
-This library implements the listening of the application's foreground and background switches by manipulating the counter in the `Activity.onStart ()` and `Activity.onStop ()` callbacks.
-
 Application in the foreground means that there is at least one visible `Activity`.
+
+This library implements the listening of the application's foreground and background switches by manipulating the counter in the `Activity.onStart ()` and `Activity.onStop ()` callbacks.
 
 This is a reliable implementation, and the behavior is similar to iOS's `UIApplicationDelegate`.
 
@@ -22,9 +22,9 @@ Therefore, the following situation will not be considered as the application int
 
 - Request permissions and show the system confirm dialog
 
-这个库通过在 `Activity.onStart()` 和 `Activity.onStop()` 回调中操作计数器的方式，来实现对应用前后台切换的监听。
-
 应用在前台，意味着该应用至少存在一个可见的 `Activity`。
+
+这个库通过在 `Activity.onStart()` 和 `Activity.onStop()` 回调中操作计数器的方式，来实现对应用前后台切换的监听。
 
 这是一个可靠的实现，他的行为跟 iOS 的 `UIApplicationDelegate` 类似。
 
