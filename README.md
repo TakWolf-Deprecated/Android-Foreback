@@ -33,7 +33,7 @@ If this library is not for you, try another library.
 ### Gradle ###
 
 ``` gradle
-compile 'com.takwolf.android:foreback:0.0.1'
+compile 'com.takwolf.android:foreback:0.0.2'
 ```
 
 ### Java ###
