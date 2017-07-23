@@ -12,13 +12,15 @@ public final class Foreback implements Application.ActivityLifecycleCallbacks {
 
     private static final String TAG = "Foreback";
 
-    private Foreback() {}
-
     private static Foreback singleton;
 
     public static void init(Application application) {
+        init(application, null);
+    }
+
+    public static void init(Application application, Filter filter) {
         if (singleton == null) {
-            singleton = new Foreback();
+            singleton = new Foreback(filter);
             application.registerActivityLifecycleCallbacks(singleton);
         } else {
             Log.w(TAG, TAG + " has been initialized.");
@@ -55,9 +57,14 @@ public final class Foreback implements Application.ActivityLifecycleCallbacks {
     }
 
     private final List<Listener> listenerList = new ArrayList<>();
+    private final Filter filter;
 
     private int foregroundCount = 0;
     private int bufferCount = 0;
+
+    private Foreback(Filter filter) {
+        this.filter = filter;
+    }
 
     private Listener[] collectListeners() {
         synchronized (listenerList) {
@@ -95,24 +102,28 @@ public final class Foreback implements Application.ActivityLifecycleCallbacks {
 
     @Override
     public void onActivityStarted(Activity activity) {
-        if (foregroundCount <= 0) {
-            dispatchApplicationEnterForeground(activity);
-        }
-        if (bufferCount < 0) {
-            bufferCount++;
-        } else {
-            foregroundCount++;
+        if (filter == null || !filter.isIgnore(activity)) {
+            if (foregroundCount <= 0) {
+                dispatchApplicationEnterForeground(activity);
+            }
+            if (bufferCount < 0) {
+                bufferCount++;
+            } else {
+                foregroundCount++;
+            }
         }
     }
 
     @Override
     public void onActivityStopped(Activity activity) {
-        if (activity.isChangingConfigurations()) {
-            bufferCount--;
-        } else {
-            foregroundCount--;
-            if (foregroundCount <= 0) {
-                dispatchApplicationEnterBackground(activity);
+        if (filter == null || !filter.isIgnore(activity)) {
+            if (activity.isChangingConfigurations()) {
+                bufferCount--;
+            } else {
+                foregroundCount--;
+                if (foregroundCount <= 0) {
+                    dispatchApplicationEnterBackground(activity);
+                }
             }
         }
     }
@@ -137,6 +148,12 @@ public final class Foreback implements Application.ActivityLifecycleCallbacks {
         void onApplicationEnterForeground(Activity activity);
 
         void onApplicationEnterBackground(Activity activity);
+
+    }
+
+    public interface Filter {
+
+        boolean isIgnore(Activity activity);
 
     }
 
