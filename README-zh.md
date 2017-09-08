@@ -1,10 +1,10 @@
 # Android - Foreback #
 
 [![Build Status](https://travis-ci.org/TakWolf/Android-Foreback.svg?branch=master)](https://travis-ci.org/TakWolf/Android-Foreback)
-[![Download](https://api.bintray.com/packages/takwolf/maven/Android-Foreback/images/download.svg)](https://bintray.com/takwolf/maven/Android-Foreback/_latestVersion)
-[![Platform](https://img.shields.io/badge/platform-Android-green.svg?style=flat)](https://www.android.com)
-[![API](https://img.shields.io/badge/API-14%2B-brightgreen.svg?style=flat)](https://android-arsenal.com/api?level=14)
-[![License](https://img.shields.io/github/license/TakWolf/Android-Foreback.svg?style=flat)](http://www.apache.org/licenses/LICENSE-2.0)
+[![Bintray](https://img.shields.io/bintray/v/takwolf/maven/Android-Foreback.svg)](https://bintray.com/takwolf/maven/Android-Foreback/_latestVersion)
+[![Platform](https://img.shields.io/badge/platform-Android-green.svg)](https://www.android.com)
+[![API](https://img.shields.io/badge/API-14%2B-brightgreen.svg)](https://android-arsenal.com/api?level=14)
+[![License](https://img.shields.io/github/license/TakWolf/Android-Foreback.svg)](http://www.apache.org/licenses/LICENSE-2.0)
 
 [English](README.md) | 中文
 
