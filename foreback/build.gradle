@@ -10,7 +10,7 @@ ext {
     groupId = 'com.takwolf.android'
     artifactId = 'foreback'
 
-    libraryVersion = '0.0.2'
+    libraryVersion = '0.1.0'
     libraryName = 'Android - Foreback'
     libraryDescription = 'A utility to help listen Android application enter foreground or background.'
 
