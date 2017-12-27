@@ -25,11 +25,11 @@ ext {
 
 android {
 
-    compileSdkVersion 26
+    compileSdkVersion 27
 
     defaultConfig {
         minSdkVersion 14
-        targetSdkVersion 26
+        targetSdkVersion 27
         versionCode Integer.parseInt(new Date().format('yyyyMMdd'))
         versionName libraryVersion
     }
