@@ -33,7 +33,7 @@
 ### Gradle ###
 
 ``` gradle
-implementation 'com.takwolf.android:foreback:0.1.0'
+implementation 'com.takwolf.android:foreback:0.1.1'
 ```
 
 ### Java ###
