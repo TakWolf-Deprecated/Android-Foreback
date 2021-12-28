@@ -1,4 +1,8 @@
-# Android - Foreback #
+# Deprecated
+
+This tool is now deprecated. Please switch to [Lifecycle-Aware Components](https://developer.android.google.cn/topic/libraries/architecture/lifecycle).
+
+# Android - Foreback
 
 [![Build Status](https://travis-ci.org/TakWolf/Android-Foreback.svg?branch=master)](https://travis-ci.org/TakWolf/Android-Foreback)
 [![Bintray](https://api.bintray.com/packages/takwolf/maven/Android-Foreback/images/download.svg)](https://bintray.com/takwolf/maven/Android-Foreback/_latestVersion)
@@ -28,15 +32,15 @@ There is another library named [Android-Repause](https://github.com/TakWolf/Andr
 
 If this library is not for you, try another library.
 
-## Usage ##
+## Usage
 
-### Gradle ###
+### Gradle
 
 ``` gradle
 implementation 'com.takwolf.android:foreback:0.1.1'
 ```
 
-### Java ###
+### Java
 
 Initialize in `Application.onCreate()`, and register a listener:
 
@@ -72,15 +76,7 @@ Foreback.isApplicationInTheForeground();
 Foreback.isApplicationInTheBackground();
 ```
 
-## Author ##
-
-TakWolf
-
-[takwolf@foxmail.com](mailto:takwolf@foxmail.com)
-
-[http://takwolf.com](http://takwolf.com)
-
-## License ##
+## License
 
 ```
 Copyright 2017 TakWolf

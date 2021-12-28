@@ -1,4 +1,8 @@
-# Android - Foreback #
+# Deprecated
+
+This tool is now deprecated. Please switch to [Lifecycle-Aware Components](https://developer.android.google.cn/topic/libraries/architecture/lifecycle).
+
+# Android - Foreback
 
 [![Build Status](https://travis-ci.org/TakWolf/Android-Foreback.svg?branch=master)](https://travis-ci.org/TakWolf/Android-Foreback)
 [![Bintray](https://api.bintray.com/packages/takwolf/maven/Android-Foreback/images/download.svg)](https://bintray.com/takwolf/maven/Android-Foreback/_latestVersion)
@@ -28,15 +32,15 @@
 
 如果本库不适合你，请尝试另外一个库。
 
-## Usage ##
+## Usage
 
-### Gradle ###
+### Gradle
 
 ``` gradle
 implementation 'com.takwolf.android:foreback:0.1.1'
 ```
 
-### Java ###
+### Java
 
 请在 `Application.onCreate()` 中初始化，并注册一个监听器：
 
@@ -72,15 +76,7 @@ Foreback.isApplicationInTheForeground();
 Foreback.isApplicationInTheBackground();
 ```
 
-## Author ##
-
-TakWolf
-
-[takwolf@foxmail.com](mailto:takwolf@foxmail.com)
-
-[http://takwolf.com](http://takwolf.com)
-
-## License ##
+## License
 
 ```
 Copyright 2017 TakWolf
